@@ -1,12 +1,13 @@
-import Link from "next/link";
+import Documents from "@/components/Documents";
 import React from "react";
 
 const dashboard = () => {
   return (
-    <div>
-      <Link href="/dashboard">
-        Chat to <span className="text-indigo-600">PDF</span>
-      </Link>
+    <div className="h-full max-w-7xl max-auto">
+      <h1 className="text-3xl p-5 bg-gray-100font-extralight text-indigo-600">
+        My Documents
+      </h1>
+      <Documents />
     </div>
   );
 };
