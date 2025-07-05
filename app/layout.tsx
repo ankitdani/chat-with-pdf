@@ -7,10 +7,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className="min-h-screen h-screen flex flex-col">{children}</body>
-      </html>
-    </ClerkProvider>
+    <html lang="en">
+      <body className="min-h-screen h-screen flex flex-col">
+        <ClerkProvider>{children}</ClerkProvider>
+      </body>
+    </html>
   );
 }
