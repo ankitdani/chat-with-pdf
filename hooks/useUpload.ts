@@ -10,6 +10,7 @@ import { doc, setDoc } from "firebase/firestore";
 
 import { v4 as uuidv4 } from "uuid";
 import { Percent } from "lucide-react";
+import { generateEmbeddings } from "@/actions/generateEmbeddings";
 
 export enum StatusText {
   UPLOADING = "Uploading file...",
@@ -64,7 +65,9 @@ const useUpload = () => {
           createdAt: new Date(),
         });
         setStatus(StatusText.GENERATING);
-        //TODO - generate AI embedding
+
+        await generateEmbeddings(fileIdToUploadTo);
+
         setFileId(fileIdToUploadTo);
       }
     );
